@@ -1,0 +1,6 @@
+dist
+data
+public/data
+package-lock.json
+PLAN.md
+DESIGN.md
