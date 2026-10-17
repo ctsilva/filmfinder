@@ -52,7 +52,7 @@ See `DESIGN.md` for the design and the full decision log (record new decisions t
 
 Lessons: one big SPARQL join timed out, so split it (credit links first, then person details by id). Querying "instance of film" silently missed about 330 animated and anime films, and Wikidata records "animated film" as a type rather than a genre, so the type is also counted as the Animation genre.
 
-**Review fixes** (from `CRITIQUE.md`; each finding was checked before fixing):
+**Review fixes** (from an outside code review; each finding was checked before fixing):
 - Range sliders could create empty queries. Thumbs now snap to values that occur under the other filters (`src/engine/rangeSnap.ts`), checked by a randomised test.
 - People with the same name were merged. People are now identified by id throughout (1,348 merged people separated in the IMDb data); namesakes get a label with their best-known film. `meta.version` is 3 and older data is skipped with a message. `credits.json` fell from 23 MB to 2.6 MB.
 - Failed people or cast loads no longer stick on "loading…": loading, ready and error states with Retry.
